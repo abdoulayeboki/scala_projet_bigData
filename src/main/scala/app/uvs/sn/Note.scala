@@ -1,6 +1,6 @@
 package app.uvs.sn
 
-class EtudiantMatiere(devoir_1:Double,devoir_2:Double,exam:Double,valide:Boolean,etud: Etudiant,mat:Matiere) {
+class Note(devoir_1:Double, devoir_2:Double, exam:Double, valide:Boolean, etud: Etudiant, mat:Matiere) {
   private[this] var _devoir1: Double = devoir_1
   private[this] var _examen: Double = exam
   private[this] var _devoir2: Double = devoir_2
@@ -44,5 +44,5 @@ class EtudiantMatiere(devoir_1:Double,devoir_2:Double,exam:Double,valide:Boolean
   }
 
 
-  override def toString = s"EtudiantMatiere($etudiant, $matiere, $devoir1, $devoir2, $examen)"
+  override def toString = s"Note($etudiant, $matiere, $devoir1, $devoir2, $examen)"
 }

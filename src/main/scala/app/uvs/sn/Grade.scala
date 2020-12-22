@@ -1,23 +1,22 @@
 package app.uvs.sn
-import scala.beans.BeanProperty
 
-class Niveau (val id:Int, val libelle:String){
-  private var _idNiveau: Int = id
-  private[this] var _libelleNiveau: String = libelle
+class Grade(val id:Int, val libelle:String){
+  private var _idGrade: Int = id
+  private[this] var _libelleGrade: String = libelle
 
-  // getter libelleNiveau
-  def libelleNiveau: String = _libelleNiveau
-  // setter libelleNiveau_
-  def libelleNiveau_=(value: String): Unit = {
-    _libelleNiveau = value
+  // getter libelleGrade
+  def libelleGrade: String = _libelleGrade
+  // setter libelleGrade_
+  def libelleGrade_=(value: String): Unit = {
+    _libelleGrade = value
   }
-  // getter idNiveau
-  def idNiveau: Int = _idNiveau
+  // getter idGrade
+  def idGrade: Int = _idGrade
   // setter idiveau
-  private def idNiveau_=(value: Int): Unit = {
-    _idNiveau = value
+  private def idGrade_=(value: Int): Unit = {
+    _idGrade = value
   }
 
 
-  override def toString = s"Niveau($libelleNiveau, $idNiveau)"
+  override def toString = s"Grade($idGrade,$libelleGrade)"
 }

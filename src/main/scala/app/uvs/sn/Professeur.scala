@@ -1,36 +1,49 @@
 package app.uvs.sn
 
-class Etudiant (var id:Int, nom:String, prenom:String, niveau:Niveau){
+class Professeur(var id:Int, nom:String, prenom:String, grade:Grade){
   // definition des attributs
-  private[this] var _idEtudiant: Int = id
-  private[this] var _nomEtudiant: String = nom
-  private[this] var _prenomEtudiant: String = prenom
-  private[this] var _niveauEtudiant: Niveau = niveau
+  private[this] var _idProfesseur: Int = id
+  private[this] var _nomProfesseur: String = nom
+  private[this] var _prenomProfesseur: String = prenom
+  private[this] var _gradeProfesseur: Grade = grade
+  private[this] var _cours: List[Cours] = null
 
-  def idEtudiant: Int = _idEtudiant
+  // definition de la methode permettant d'ajouter un cours dans la collection _cours
+  //def addCours(cour: Cours): List[Cours] = {
+    //cours = cour+:cours // ajout de la note au debut de la liste
+    //return cours
+  //}
+  // getter setter
+  def cours: List[Cours] = _cours
 
-  def idEtudiant_=(value: Int): Unit = {
-    _idEtudiant = value
+  def cours_=(value: List[Cours]): Unit = {
+    _cours = value
   }
 
-  def nomEtudiant: String = _nomEtudiant
+  def idProfesseur: Int = _idProfesseur
 
-  def nomEtudiant_=(value: String): Unit = {
-    _nomEtudiant = value
+  def idProfesseur_=(value: Int): Unit = {
+    _idProfesseur = value
   }
 
-  def prenomEtudiant: String = _prenomEtudiant
+  def nomProfesseur: String = _nomProfesseur
 
-  def prenomEtudiant_=(value: String): Unit = {
-    _prenomEtudiant = value
+  def nomProfesseur_=(value: String): Unit = {
+    _nomProfesseur = value
+  }
+
+  def prenomProfesseur: String = _prenomProfesseur
+
+  def prenomProfesseur_=(value: String): Unit = {
+    _prenomProfesseur = value
   }
 
 
-  def niveauEtudiant: Niveau = _niveauEtudiant
+  def gradeProfesseur: Grade = _gradeProfesseur
 
-  def niveauEtudiant_=(value: Niveau): Unit = {
-    _niveauEtudiant = value
+  def gradeProfesseur_=(value: Grade): Unit = {
+    _gradeProfesseur = value
   }
-
-  override def toString = s"Etudiant($idEtudiant, $nomEtudiant, $prenomEtudiant, $niveauEtudiant)"
+  // fin getter setter
+  override def toString = s"Professeur($idProfesseur, $nomProfesseur, $prenomProfesseur, $gradeProfesseur)"
 }
