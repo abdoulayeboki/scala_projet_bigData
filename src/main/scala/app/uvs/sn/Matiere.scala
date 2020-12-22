@@ -1,25 +1,33 @@
 package app.uvs.sn
 
+import scala.collection.mutable.ListBuffer
+
 class Matiere (code:String,libelle:String,coefficient:Int){
   private[this] var _codeMatiere: String = code
   private[this] var _libelleMatiere: String = libelle
   private[this] var _coefficientMatiere: Int = coefficient
-  private[this] var _notes: List[Note] = null
+  private[this] var _notes: ListBuffer[Note] = null
   private[this] var _cours: List[Cours] = null
 
+  // definition de la methode permettant d'ajouter une note dans la collection _notes
+  def addNotes(note: ListBuffer[Note]): ListBuffer[Note] = {
+    if (_notes == null )
+      _notes = note
+    else
+      _notes = note++_notes // ajout de la note au debut de la liste
+    return _notes
+  }
+
+  // getter setter
   def cours: List[Cours] = _cours
 
   def cours_=(value: List[Cours]): Unit = {
     _cours = value
   }
-  // definition de la methode permettant d'ajouter une note dans la collection _notes
-  def addNotes(note: Note): List[Note] = {
-    notes = note+:_notes // ajout de la note au debut de la liste
-    return notes
-  }
-  def notes: List[Note] = _notes
 
-  def notes_=(value: List[Note]): Unit = {
+  def notes: ListBuffer[Note] = _notes
+
+  def notes_=(value: ListBuffer[Note]): Unit = {
     _notes = value
   }
 

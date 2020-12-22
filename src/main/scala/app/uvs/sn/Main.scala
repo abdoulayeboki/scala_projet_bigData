@@ -1,6 +1,7 @@
 package app.uvs.sn
 
 import java.util.Date
+import scala.collection.mutable.ListBuffer
 
 object Main {
   def main(args: Array[String]) {
@@ -15,6 +16,7 @@ object Main {
     val professeur = new Professeur(3,"sow","laye",grade )
     professeur.idProfesseur_= (2)
     var matiere = new Matiere("mat","Mathematique",4)
+    var add = matiere.addNotes(ListBuffer(new Note(devoir_1 = 100,23,32,true,etudiant,matiere)))
     var note = new Note(etudiant,matiere)
     var note1 = new Note(etudiant,matiere)
     // recuperer le nom de l'etudiant dans etudiantMatiere
@@ -22,17 +24,17 @@ object Main {
     // ajouter le note à etudiant
     etudiant.notes_= (List(note,note1))
 
-    matiere.notes_= (List (note,note1))
+    matiere.notes_= (ListBuffer (note,note1))
     var cours = new Cours(new Date(),new Date(),professeur,salle,matiere,classe)
     salle.cours = List(cours)
 
 
     var ajouNote = etudiant.addNotes(new Note(12,12,13,true,etudiant,matiere))
-    var add = matiere.addNotes(new Note(32,20,13,true,etudiant,matiere))
-    //var addCours = professeur.addCours(new Cours(new Date(),new Date(),professeur,salle,matiere,classe))
+    var addn = matiere.addNotes(ListBuffer(new Note(342,20,13,true,etudiant,matiere)))
+    professeur.addCours(List(cours))
 
-   // println(addCours)
-
+    println(matiere.notes)
+    println(professeur.cours)
     println(classe)
     println(cours)
     println("les notes de la matiere"+ matiere.libelleMatiere+"sont "+ matiere.notes)

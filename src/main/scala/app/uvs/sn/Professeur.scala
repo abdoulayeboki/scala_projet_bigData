@@ -9,10 +9,13 @@ class Professeur(var id:Int, nom:String, prenom:String, grade:Grade){
   private[this] var _cours: List[Cours] = null
 
   // definition de la methode permettant d'ajouter un cours dans la collection _cours
-  //def addCours(cour: Cours): List[Cours] = {
-    //cours = cour+:cours // ajout de la note au debut de la liste
-    //return cours
-  //}
+  def addCours(cour: List[Cours]): List[Cours] = {
+    if (cours == null)
+      _cours = cour
+    else
+      _cours = cours ++ cour // ajout cours au debut de la liste
+    return _cours
+  }
   // getter setter
   def cours: List[Cours] = _cours
 
